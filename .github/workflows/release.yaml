@@ -52,7 +52,11 @@ jobs:
       - name: Get Latest Tag
         id: latest-tag
         run: |
-          echo GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1)")" >>"$GITHUB_OUTPUT"
+          GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1)")"
+          if [[ -z "$GIT_LATEST_TAG" ]]; then
+            GIT_LATEST_TAG="0.0.0"
+          fi
+          echo "GIT_LATEST_TAG=${GIT_LATEST_TAG}" >>"$GITHUB_OUTPUT"
 
       - name: Compute Next Tag
         id: next-tag
