@@ -52,7 +52,7 @@ jobs:
       - name: Get Latest Tag
         id: latest-tag
         run: |
-          GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1)")"
+          GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1 2>/dev/null || true)" 2>/dev/null || true)"
           if [[ -z "$GIT_LATEST_TAG" ]]; then
             GIT_LATEST_TAG="0.0.0"
           fi
