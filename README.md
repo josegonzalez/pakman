@@ -2,7 +2,7 @@
 
 An automatically generated collection of paks for your MinUI installation
 
-## Usage
+## Installation
 
 > [!IMPORTANT]
 > MinUI must have already been installed and booted at least once on your device. Please follow these steps after installing MinUI.
@@ -14,9 +14,22 @@ An automatically generated collection of paks for your MinUI installation
 5. Delete the `Pakman` folder and `Pakman.zip` file
 6. Unmount your SD Card and insert it into your MinUI device.
 
+## Usage
+
+See the readme for each pak. Note that certain paks _may_ not be supported on specific platforms; Emu paks are generally platform specific.
+
 ## Credits
 
 Below are the paks sourced by this pak collection. Please refer to the licenses for each pak for more details on licensing.
+
+### Emu Paks
+
+#### `tg5040`
+
+- [Dreamcast](https://github.com/josegonzalez/minui-dreamcast-pak) by @josegonzalez
+- [N64](https://github.com/josegonzalez/minui-n64-pak) by @josegonzalez
+
+### Tool Paks
 
 - [Collection Manager](https://github.com/jiserra/Collection-Manager.pak) by @jiserra
 - [Developer](https://github.com/josegonzalez/minui-developer-pak) by @josegonzalez
