@@ -1,0 +1,46 @@
+---
+name: "ci"
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - main
+
+permissions:
+  attestations: write
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Create MinUI.zip
+        run: make
+
+      - name: Attest Build Provenance
+        uses: actions/attest-build-provenance@v2.2.3
+        with:
+          subject-path: "MinUI.zip"
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4.6.1
+        with:
+          name: "MinUI.zip"
+          path: "MinUI.zip"
+
+      - name: Get Latest Tag
+        id: latest-tag
+        run: |
+          echo GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1)")" >>"$GITHUB_OUTPUT"

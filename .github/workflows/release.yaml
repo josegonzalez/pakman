@@ -1,0 +1,75 @@
+---
+name: "release"
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: "Bump type"
+        default: "patch"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  attestations: write
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Create MinUI.zip
+        run: make
+
+      - name: Attest Build Provenance
+        uses: actions/attest-build-provenance@v2.2.3
+        with:
+          subject-path: "MinUI.zip"
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4.6.1
+        with:
+          name: "MinUI.zip"
+          path: "MinUI.zip"
+
+      - name: Get Latest Tag
+        id: latest-tag
+        run: |
+          echo GIT_LATEST_TAG="$(git describe --tags "$(git rev-list --tags --max-count=1)")" >>"$GITHUB_OUTPUT"
+
+      - name: Compute Next Tag
+        id: next-tag
+        uses: docker://ghcr.io/dokku/semver-generator:latest
+        with:
+          bump: ${{ github.event.inputs.bump_type }}
+          input: ${{ steps.latest-tag.outputs.GIT_LATEST_TAG }}
+
+      - name: Create and Push Tag
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag "$GIT_NEXT_TAG"
+          git push origin "$GIT_NEXT_TAG"
+        env:
+          GIT_NEXT_TAG: ${{ steps.next-tag.outputs.version }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v2.2.1
+        with:
+          files: MinUI.zip
+          generate_release_notes: true
+          make_latest: "true"
+          tag_name: ${{ steps.next-tag.outputs.version }}
