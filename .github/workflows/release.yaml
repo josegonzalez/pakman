@@ -21,8 +21,8 @@ permissions:
   contents: write
 
 env:
-  FOLDER_NAME: "MinUI"
-  ZIP_NAME: "MinUI.zip"
+  FOLDER_NAME: "Pakman"
+  ZIP_NAME: "Pakman.zip"
 
 jobs:
   build:

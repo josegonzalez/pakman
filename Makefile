@@ -17,8 +17,8 @@ USB_MASS_STORAGE_VERSION := 0.3.1
 WIFI_VERSION := 0.10.1
 
 
-FOLDER_NAME ?= "MinUI"
-ZIP_NAME ?= "MinUI.zip"
+FOLDER_NAME ?= "Pakman"
+ZIP_NAME ?= "Pakman.zip"
 
 .PHONY: build
 build: emus tools
