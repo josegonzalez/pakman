@@ -10,7 +10,7 @@ An automatically generated collection of paks for your MinUI installation
 1. Mount your MinUI SD card.
 2. Download the latest release from Github. It will be named `MinUI.zip`.
 3. Unzip the `MinUI.zip` file and browse to the new `MinUI` folder.
-4. Copy the Emus, Roms, and Tools directories onto your SD Card. When prompted, _merge_ the files into place.
+4. Copy the `Emus`, `Roms`, and `Tools` directories onto your SD Card. When prompted, _merge_ the files into place.
 5. Delete the `MinUI` folder and `MinUI.zip` file
 6. Unmount your SD Card and insert it into your MinUI device.
 
