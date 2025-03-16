@@ -30,9 +30,13 @@ emus:
 
 dreamcast-emulator:
 	$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="https://github.com/josegonzalez/minui-dreamcast-pak/releases/download/$(DREAMCAST_EMULATOR_VERSION)/DC.pak.zip" PAK_NAME="DC"
+	mkdir -p "$(FOLDER_NAME)/Roms/Sega Dreamcast (DC)"
+	touch "$(FOLDER_NAME)/Roms/Sega Dreamcast (DC)/.keep"
 
 n64-emulator:
 	$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="https://github.com/josegonzalez/minui-n64-pak/releases/download/$(N64_EMULATOR_VERSION)/N64.pak.zip" PAK_NAME="N64"
+	mkdir -p "$(FOLDER_NAME)/Roms/Nintendo 64 (N64)"
+	touch "$(FOLDER_NAME)/Roms/Nintendo 64 (N64)/.keep"
 
 tools:
 	$(MAKE) collection-manager
