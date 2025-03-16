@@ -36,13 +36,13 @@ jobs:
       - name: Attest Build Provenance
         uses: actions/attest-build-provenance@v2.2.3
         with:
-          subject-path: "$(ZIP_NAME)"
+          subject-path: "${{ env.ZIP_NAME }}"
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4.6.1
         with:
-          name: "$(ZIP_NAME)"
-          path: "$(ZIP_NAME)"
+          name: "${{ env.ZIP_NAME }}"
+          path: "${{ env.ZIP_NAME }}"
 
       - name: Get Latest Tag
         id: latest-tag
