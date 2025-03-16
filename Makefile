@@ -3,7 +3,6 @@ DEVELOPER_VERSION := 0.5.0
 DREAMCAST_EMULATOR_VERSION := 0.3.4
 DROPBEAR_SSH_VERSION := 0.5.0
 DUFS_SERVER_VERSION := 0.5.5
-FILEBROWSER_VERSION := 0.5.2
 FN_EDITOR_VERSION := 0.3.4
 MOONLIGHT_VERSION := 0.3.3
 N64_EMULATOR_VERSION := 0.2.1
@@ -40,7 +39,6 @@ tools:
 	$(MAKE) developer
 	$(MAKE) dropbear-ssh
 	$(MAKE) dufs-server
-	$(MAKE) filebrowser
 	$(MAKE) fn-editor
 	$(MAKE) moonlight
 	$(MAKE) random-game
@@ -62,9 +60,6 @@ dropbear-ssh:
 
 dufs-server:
 	$(MAKE) install-pak PAK_TYPE="Tools" PAK_URL="https://github.com/josegonzalez/minui-dufs-server-pak/releases/download/$(DUFS_SERVER_VERSION)/HTTP.Server.pak.zip" PAK_NAME="HTTP Server"
-	
-filebrowser:
-	$(MAKE) install-pak PAK_TYPE="Tools" PAK_URL="https://github.com/josegonzalez/minui-filebrowser-pak/releases/download/$(FILEBROWSER_VERSION)/HTTP.Filebrowser.pak.zip" PAK_NAME="HTTP Filebrowser"
 
 fn-editor:
 	$(MAKE) install-pak PAK_TYPE="Tools" PAK_URL="https://github.com/josegonzalez/trimui-brick-fn-editor-pak/releases/download/$(FN_EDITOR_VERSION)/FN.Editor.pak.zip" PAK_NAME="FN Editor"

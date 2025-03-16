@@ -22,7 +22,6 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Developer](https://github.com/josegonzalez/minui-developer-pak) by @josegonzalez
 - [Dropbear SSH Server](https://github.com/josegonzalez/minui-dropbear-server-pak) by @josegonzalez
 - [Dufs HTTP Server](https://github.com/josegonzalez/minui-dufs-server-pak) by @josegonzalez
-- [Filebrowser](https://github.com/josegonzalez/minui-filebrowser-pak) by @josegonzalez
 - [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez
 - [Moonlight](https://github.com/josegonzalez/trimui-brick-moonlight-pak) by @josegonzalez
 - [Random Game](https://github.com/josegonzalez/minui-random-game-pak) by @josegonzalez
