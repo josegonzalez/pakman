@@ -1,3 +1,4 @@
+COLLECTION_MANAGER_VERSION := 0.1.1
 DEVELOPER_VERSION := 0.5.0
 DREAMCAST_EMULATOR_VERSION := 0.3.4
 DROPBEAR_SSH_VERSION := 0.5.0
@@ -33,6 +34,7 @@ n64-emulator:
 	$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="https://github.com/josegonzalez/minui-n64-pak/releases/download/$(N64_EMULATOR_VERSION)/N64.pak.zip" PAK_NAME="N64"
 
 tools:
+	$(MAKE) collection-manager
 	$(MAKE) developer
 	$(MAKE) dropbear-ssh
 	$(MAKE) dufs-server
@@ -46,6 +48,9 @@ tools:
 	$(MAKE) syncthing
 	$(MAKE) wifi
 	$(MAKE) usb-mass-storage
+
+collection-manager:
+	$(MAKE) install-pak PAK_TYPE="Tools" PAK_URL="https://github.com/jiserra/Collection-Manager.pak/releases/download/$(COLLECTION_MANAGER_VERSION)/Collection.Manager.pak.zip" PAK_NAME="Collection Manager"
 
 developer:
 	$(MAKE) install-pak PAK_TYPE="Tools" PAK_URL="https://github.com/josegonzalez/minui-developer-pak/releases/download/$(DEVELOPER_VERSION)/Developer.pak.zip" PAK_NAME="Developer"
