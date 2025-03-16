@@ -18,10 +18,12 @@ USB_MASS_STORAGE_VERSION := 0.3.1
 WIFI_VERSION := 0.10.1
 
 
-.PHONY: MinUI.zip
-MinUI.zip: emus tools
-	# compress the MinUI directory into a zip file
-	zip -r MinUI.zip MinUI
+FOLDER_NAME ?= "MinUI"
+ZIP_NAME ?= "MinUI.zip"
+
+.PHONY: build
+build: emus tools
+	zip -r $(ZIP_NAME) $(FOLDER_NAME)
 
 emus:
 	$(MAKE) dreamcast-emulator
@@ -109,11 +111,11 @@ ifndef PAK_URL
 endif
 	mkdir -p .tmp
 	curl -o ".tmp/$(PAK_NAME).zip" -sSL "$(PAK_URL)"
-	mkdir -p "MinUI/$(PAK_TYPE)"
+	mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)"
 	unzip -q -o ".tmp/$(PAK_NAME).zip" -d ".tmp/$(PAK_NAME).pak"
 	for platform in $$(jq -rM '.platforms[]' ".tmp/$(PAK_NAME).pak/config.json"); do \
-		mkdir -p "MinUI/$(PAK_TYPE)/$$platform"; \
-		rm -rf "MinUI/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
-		cp -r ".tmp/$(PAK_NAME).pak" "MinUI/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
+		mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform"; \
+		rm -rf "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
+		cp -r ".tmp/$(PAK_NAME).pak" "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
 	done
 	rm -rf .tmp

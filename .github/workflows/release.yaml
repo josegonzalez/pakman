@@ -20,6 +20,10 @@ permissions:
   id-token: write
   contents: write
 
+env:
+  FOLDER_NAME: "MinUI"
+  ZIP_NAME: "MinUI.zip"
+
 jobs:
   build:
     name: build
@@ -31,19 +35,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create MinUI.zip
+      - name: Create package
         run: make
 
       - name: Attest Build Provenance
         uses: actions/attest-build-provenance@v2.2.3
         with:
-          subject-path: "MinUI.zip"
+          subject-path: "$(ZIP_NAME)"
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4.6.1
         with:
-          name: "MinUI.zip"
-          path: "MinUI.zip"
+          name: "$(ZIP_NAME)"
+          path: "$(ZIP_NAME)"
 
       - name: Get Latest Tag
         id: latest-tag
@@ -69,7 +73,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2.2.1
         with:
-          files: MinUI.zip
+          files: "$(ZIP_NAME)"
           generate_release_notes: true
           make_latest: "true"
           tag_name: ${{ steps.next-tag.outputs.version }}
