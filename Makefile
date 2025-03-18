@@ -1,30 +1,31 @@
 FOLDER_NAME ?= "Pakman"
 ZIP_NAME ?= "Pakman.zip"
+PAK_JSON_FILE ?= "paks.json"
 
 .PHONY: build
 build: emus tools
 	zip -r $(ZIP_NAME) $(FOLDER_NAME)
 
 emus:
-	@jq -c '.emu_paks[]' paks.json | while read -r pak; do \
+	@jq -c '.emu_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
 		name=$$(echo $$pak | jq -r '.name'); \
 		repository=$$(echo $$pak | jq -r '.repository'); \
 		version=$$(echo $$pak | jq -r '.version'); \
 		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
 		rom_folder=$$(echo $$pak | jq -r '.rom_folder'); \
-		$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="$$repository/releases/download/$$version/$$pak_name.pak.zip" PAK_NAME="$$pak_name"; \
+		$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="$$repository/releases/download/$$version/$$pak_name.pak.zip" PAK_NAME="$$pak_name" || exit 1; \
 		mkdir -p "$(FOLDER_NAME)/$$rom_folder"; \
 		touch "$(FOLDER_NAME)/$$rom_folder/.keep"; \
 	done
 
 tools:
-	@jq -c '.tool_paks[]' paks.json | while read -r pak; do \
+	@jq -c '.tool_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
 		name=$$(echo $$pak | jq -r '.name'); \
 		repository=$$(echo $$pak | jq -r '.repository'); \
 		version=$$(echo $$pak | jq -r '.version'); \
 		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
 		pak_zip_file=$$(echo $$pak | jq -r '.pak_name' | tr " " .); \
-		$(MAKE) install-pak PAK_NAME="$$pak_name" PAK_TYPE="Tools" PAK_URL="$$repository/releases/download/$$version/$$pak_zip_file.pak.zip"; \
+		$(MAKE) install-pak PAK_NAME="$$pak_name" PAK_TYPE="Tools" PAK_URL="$$repository/releases/download/$$version/$$pak_zip_file.pak.zip" || exit 1; \
 	done
 
 install-pak:
@@ -38,7 +39,7 @@ ifndef PAK_URL
 	$(error PAK_URL is not set)
 endif
 	mkdir -p .tmp
-	curl -o ".tmp/$(PAK_NAME).zip" -sSL "$(PAK_URL)"
+	curl -f -o ".tmp/$(PAK_NAME).zip" -sSL "$(PAK_URL)"
 	mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)"
 	unzip -q -o ".tmp/$(PAK_NAME).zip" -d ".tmp/$(PAK_NAME).pak"
 	for platform in $$(jq -rM '.platforms[]' ".tmp/$(PAK_NAME).pak/config.json"); do \
