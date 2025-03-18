@@ -24,12 +24,16 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 
 ### Emu Paks
 
-#### `tg5040`
+<!-- begin emu paks -->
 
 - [Dreamcast](https://github.com/josegonzalez/minui-dreamcast-pak) by @josegonzalez
 - [N64](https://github.com/josegonzalez/minui-n64-pak) by @josegonzalez
 
+<!-- end emu paks -->
+
 ### Tool Paks
+
+<!-- begin tool paks -->
 
 - [Collection Manager](https://github.com/jiserra/Collection-Manager.pak) by @jiserra
 - [Developer](https://github.com/josegonzalez/minui-developer-pak) by @josegonzalez
@@ -46,3 +50,5 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Terminal](https://github.com/josegonzalez/minui-terminal-pak) by @josegonzalez
 - [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
 - [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez
+
+<!-- end tool paks -->

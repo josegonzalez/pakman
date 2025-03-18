@@ -1,0 +1,110 @@
+{
+  "emu_paks": [
+    {
+      "name": "Dreamcast",
+      "repository": "https://github.com/josegonzalez/minui-dreamcast-pak",
+      "version": "0.3.4",
+      "pak_name": "DC",
+      "rom_folder": "Roms/Sega Dreamcast (DC)"
+    },
+    {
+      "name": "N64",
+      "repository": "https://github.com/josegonzalez/minui-n64-pak",
+      "version": "0.2.1",
+      "pak_name": "N64",
+      "rom_folder": "Roms/Nintendo 64 (N64)"
+    }
+  ],
+  "tool_paks": [
+    {
+      "name": "Collection Manager",
+      "repository": "https://github.com/jiserra/Collection-Manager.pak",
+      "version": "0.1.1",
+      "pak_name": "Collection Manager"
+    },
+    {
+      "name": "Developer",
+      "repository": "https://github.com/josegonzalez/minui-developer-pak",
+      "version": "0.5.0",
+      "pak_name": "Developer"
+    },
+    {
+      "name": "SSH Server",
+      "repository": "https://github.com/josegonzalez/minui-dropbear-server-pak",
+      "version": "0.5.0",
+      "pak_name": "SSH Server"
+    },
+    {
+      "name": "HTTP Server",
+      "repository": "https://github.com/josegonzalez/minui-dufs-server-pak",
+      "version": "0.5.5",
+      "pak_name": "HTTP Server"
+    },
+    {
+      "name": "FN Editor",
+      "repository": "https://github.com/josegonzalez/trimui-brick-fn-editor-pak",
+      "version": "0.3.4",
+      "pak_name": "FN Editor"
+    },
+    {
+      "name": "Moonlight",
+      "repository": "https://github.com/josegonzalez/trimui-brick-moonlight-pak",
+      "version": "0.3.3",
+      "pak_name": "Moonlight"
+    },
+    {
+      "name": "Random Game",
+      "repository": "https://github.com/josegonzalez/minui-random-game-pak",
+      "version": "0.3.1",
+      "pak_name": "Random Game"
+    },
+    {
+      "name": "Remote Terminal",
+      "repository": "https://github.com/josegonzalez/minui-remote-terminal-pak",
+      "version": "0.5.2",
+      "pak_name": "Remote Terminal"
+    },
+    {
+      "name": "Report",
+      "repository": "https://github.com/josegonzalez/minui-report-pak",
+      "version": "0.6.1",
+      "pak_name": "Report"
+    },
+    {
+      "name": "Screenshot Monitor",
+      "repository": "https://github.com/josegonzalez/minui-screenshot-monitor-pak",
+      "version": "0.5.0",
+      "pak_name": "Screenshot Monitor"
+    },
+    {
+      "name": "SFTPGo",
+      "repository": "https://github.com/josegonzalez/minui-sftpgo-server-pak",
+      "version": "0.3.1",
+      "pak_name": "FTP Server"
+    },
+    {
+      "name": "Syncthing",
+      "repository": "https://github.com/josegonzalez/minui-syncthing-pak",
+      "version": "0.3.0",
+      "pak_name": "Syncthing"
+    },
+    {
+      "name": "Terminal",
+      "repository": "https://github.com/josegonzalez/minui-terminal-pak",
+      "version": "0.6.2",
+      "pak_name": "Terminal"
+    },
+    {
+      "name": "USB Mass Storage",
+      "repository": "https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak",
+      "version": "0.3.1",
+      "pak_name": "USB Mass Storage"
+    },
+    {
+      "name": "WiFi",
+      "repository": "https://github.com/josegonzalez/minui-wifi-pak",
+      "version": "0.10.1",
+      "pak_name": "WiFi"
+    }
+  ]
+} 
