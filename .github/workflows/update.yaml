@@ -10,9 +10,6 @@ permissions:
   contents: write
   pull-requests: write
 
-env:
-  TRACE: "true"
-
 jobs:
   create-matrix:
     runs-on: ubuntu-latest
