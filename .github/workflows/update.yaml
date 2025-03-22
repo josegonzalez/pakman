@@ -124,7 +124,7 @@ jobs:
           )
 
           echo "pr-body=$pr_body" >> "$GITHUB_OUTPUT"
-          git checkout -b "$branch_name"
+          git checkout -b "${{ steps.push-changes.outputs.branch-name }}"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add paks.json
