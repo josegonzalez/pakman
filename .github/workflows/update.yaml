@@ -135,4 +135,6 @@ jobs:
         run: |
           [ -z "$TRACE" ] || set -x
           git push --set-upstream origin "${{ steps.push-changes.outputs.branch-name }}"
-          gh pr create --base main --head "${{ steps.push-changes.outputs.branch-name }}" --title "$commit_message" --body "${{ steps.push-changes.outputs.pr-body }} | base64 -d "
+          gh pr create --base main --head "${{ steps.push-changes.outputs.branch-name }}" --title "$commit_message" --body "$(echo "${{ steps.push-changes.outputs.pr-body }}" | base64 -d)"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
