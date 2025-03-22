@@ -12,6 +12,9 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
       - name: Create matrix
         id: matrix
         run: |
@@ -42,6 +45,7 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
+
       - name: Fetch current version
         id: current_version
         run: |
@@ -54,6 +58,7 @@ jobs:
 
       - name: Update
         run: make PAK_NAME="${{ matrix.pak.pak_name }}" PAK_TYPE="${{ matrix.pak.type }}"
+
       - name: Commit
         run: |
           # check if there are changes
