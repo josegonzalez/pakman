@@ -47,6 +47,12 @@
       "pak_name": "FN Editor"
     },
     {
+      "name": "FTP Server",
+      "repository": "https://github.com/josegonzalez/minui-ftpserver-pak",
+      "version": "0.1.0",
+      "pak_name": "FTP Server"
+    },
+    {
       "name": "Moonlight",
       "repository": "https://github.com/josegonzalez/trimui-brick-moonlight-pak",
       "version": "0.3.3",
@@ -77,10 +83,10 @@
       "pak_name": "Screenshot Monitor"
     },
     {
-      "name": "FTP Server",
-      "repository": "https://github.com/josegonzalez/minui-ftpserver-pak",
+      "name": "Simple Mode",
+      "repository": "https://github.com/josegonzalez/minui-simple-mode-pak",
       "version": "0.1.0",
-      "pak_name": "FTP Server"
+      "pak_name": "Simple Mode"
     },
     {
       "name": "Syncthing",
