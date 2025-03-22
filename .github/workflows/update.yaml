@@ -68,7 +68,7 @@ jobs:
       - name: Update pak
         run: make update-pak PAK_NAME="${{ matrix.pak.pak_name }}" PAK_TYPE="${{ matrix.pak.type }}"
 
-      - name: Push if there are changes
+      - name: Check for changes
         id: push-changes
         run: |
           [ -z "$TRACE" ] || set -x
@@ -104,13 +104,22 @@ jobs:
           repository_owner=$(echo "$repository" | cut -d'/' -f4)
           repository_name=$(echo "$repository" | cut -d'/' -f5)
 
-          commit_message="chore(deps): bump ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version in paks.json"
+          echo "new-version=$new_version" >> "$GITHUB_OUTPUT"
+          echo "repository-owner=$repository_owner" >> "$GITHUB_OUTPUT"
+          echo "repository-name=$repository_name" >> "$GITHUB_OUTPUT"
+
+      - name: Commit changes if necessary
+        id: commit-message
+        if: steps.push-changes.outputs.changes == 'true'
+        run: |
+          [ -z "$TRACE" ] || set -x
+          commit_message="chore(deps): bump ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to ${{ steps.push-changes.outputs.new-version }} in paks.json"
 
           pr_body=$(
           cat <<'EOF'
-          Bumps ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version.
+          Bumps ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to ${{ steps.push-changes.outputs.new-version }}.
 
-          Changes between versions can be viewed [here](https://github.com/$repository_owner/$repository_name/compare/$current_version...$new_version).
+          Changes between versions can be viewed [here](https://github.com/$repository_owner/$repository_name/compare/${{ steps.current_version.outputs.current_version }}...${{ steps.push-changes.outputs.new-version }}).
           EOF
           )
 
