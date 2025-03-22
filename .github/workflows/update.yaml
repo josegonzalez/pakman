@@ -83,7 +83,7 @@ jobs:
           fi
           new_version=$(jq -r --arg name "${{ matrix.pak.pak_name }}" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .version' paks.json)
 
-          branch_name="pakbot/paks/paks.json/${{ matrix.pak.pak_name }}-$new_version"
+          branch_name="$(echo "pakbot/paks/paks.json/${{ matrix.pak.pak_name }}-$new_version" | tr " " "-")"
           if git show-ref --quiet refs/heads/"$branch_name"; then
             echo "Branch $branch_name already exists, skipping"
             echo "changes=false" >> "$GITHUB_OUTPUT"
