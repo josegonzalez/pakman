@@ -46,6 +46,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Remote Terminal](https://github.com/josegonzalez/minui-remote-terminal-pak) by @josegonzalez
 - [Report](https://github.com/josegonzalez/minui-report-pak) by @josegonzalez
 - [Screenshot Monitor](https://github.com/josegonzalez/minui-screenshot-monitor-pak) by @josegonzalez
+- [Simple Mode](https://github.com/josegonzalez/minui-simple-mode-pak) by @josegonzalez
 - [Syncthing](https://github.com/josegonzalez/minui-syncthing-pak) by @josegonzalez
 - [Terminal](https://github.com/josegonzalez/minui-terminal-pak) by @josegonzalez
 - [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
