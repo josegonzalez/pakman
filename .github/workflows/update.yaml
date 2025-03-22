@@ -123,6 +123,7 @@ jobs:
           EOF
           )
 
+          echo "commit-message=$commit_message" >> "$GITHUB_OUTPUT"
           echo "pr-body=$(echo "$pr_body" | base64 -w 0)" >> "$GITHUB_OUTPUT"
           git checkout -b "${{ steps.push-changes.outputs.branch-name }}"
           git config --global user.name "github-actions[bot]"
@@ -135,6 +136,6 @@ jobs:
         run: |
           [ -z "$TRACE" ] || set -x
           git push --set-upstream origin "${{ steps.push-changes.outputs.branch-name }}"
-          gh pr create --base main --head "${{ steps.push-changes.outputs.branch-name }}" --title "$commit_message" --body "$(echo "${{ steps.push-changes.outputs.pr-body }}" | base64 -d)"
+          gh pr create --base main --head "${{ steps.push-changes.outputs.branch-name }}" --title "${{ steps.commit-message.outputs.commit-message }}" --body "$(echo "${{ steps.commit-message.outputs.pr-body }}" | base64 -d)"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
