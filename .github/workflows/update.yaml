@@ -85,9 +85,25 @@ jobs:
             exit 0
           fi
 
+          repository=$(jq -r --arg name "${{ matrix.pak.pak_name }}" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .repository' paks.json)
+          if [[ -z "$repository" ]]; then
+            echo "No repository found for '$PAK_NAME' in type '$PAK_TYPE'"
+            exit 1
+          fi
+
+          repository_owner=$(echo "$repository" | cut -d'/' -f4)
+          repository_name=$(echo "$repository" | cut -d'/' -f5)
+
+          commit_message="chore(deps): bump ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version in paks.json"
+          read -r -d '' pr_body <<'EOF'
+          Bumps ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version.
+
+          Changes between versions can be viewed [here](https://github.com/$repository_owner/$repository_name/compare/$current_version...$new_version).
+          EOF
           git checkout -b "$branch_name"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add paks.json
-          git commit -m "chore(deps): bump ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version in paks.json"
+          git commit -m "$commit_message\n\n$pr_body"
           git push --set-upstream origin "$branch_name"
+          gh pr create --base main --head "$branch_name" --title "$commit_message" --body "$pr_body"
