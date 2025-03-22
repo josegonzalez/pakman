@@ -1,0 +1,83 @@
+---
+name: "update"
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  create-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Create matrix
+        id: matrix
+        run: |
+          # generate a list of paks from the paks.json file
+          # with the names of the paks and the type of the pak
+          # the list should be like this:
+          # [{"name": "Dreamcast", "type": "Emu"}, {"name": "N64", "type": "Emu"}]
+
+          paks="[]"
+          jq -c '.emu_paks[]' paks.json | while read -r pak; do
+            pak="{\"pak_name\": \"$(echo "$pak" | jq -r '.pak_name')\", \"type\": \"Emu\"}"
+            paks=$(jq -c ". += [$pak]" <<< "$paks")
+          done
+          jq -c '.tool_paks[]' paks.json | while read -r pak; do
+            pak="{\"pak_name\": \"$(echo "$pak" | jq -r '.pak_name')\", \"type\": \"Tool\"}"
+            paks=$(jq -c ". += [$pak]" <<< "$paks")
+          done
+          echo "matrix=$paks" >> "$GITHUB_OUTPUT"
+
+  update:
+    runs-on: ubuntu-latest
+    needs: create-matrix
+    strategy:
+      matrix:
+        pak: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+      - name: Fetch current version
+        id: current_version
+        run: |
+          pak_key="emus_paks"
+          if [[ "${{ matrix.pak.type }}" == "Tool" ]]; then
+              pak_key="tool_paks"
+          fi
+          current_version=$(jq -r --arg name "${{ matrix.pak.pak_name }}" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .version' paks.json)
+          echo "current_version=$current_version" >> "$GITHUB_OUTPUT"
+
+      - name: Update
+        run: make PAK_NAME="${{ matrix.pak.pak_name }}" PAK_TYPE="${{ matrix.pak.type }}"
+      - name: Commit
+        run: |
+          # check if there are changes
+          if ! git diff --name-only HEAD | grep -q paks.json; then
+            exit 0
+          fi
+
+          # get the new version of the pak
+          pak_key="emus_paks"
+          if [[ "${{ matrix.pak.type }}" == "Tool" ]]; then
+              pak_key="tool_paks"
+          fi
+          new_version=$(jq -r --arg name "${{ matrix.pak.pak_name }}" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .version' paks.json)
+
+          branch_name="pakbot/paks/paks.json/${{ matrix.pak.pak_name }}-$new_version"
+          # check if the branch already exists
+          if git show-ref --quiet refs/heads/"$branch_name"; then
+            echo "Branch $branch_name already exists, skipping"
+            exit 0
+          fi
+
+          git checkout -b "$branch_name"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paks.json
+          git commit -m "chore(deps): bump ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to $new_version in paks.json"
+          git push --set-upstream origin "$branch_name"
