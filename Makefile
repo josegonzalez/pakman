@@ -48,3 +48,27 @@ endif
 		cp -r ".tmp/$(PAK_NAME).pak" "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
 	done
 	rm -rf .tmp
+
+update: update-emus update-tools
+
+update-emus:
+	@jq -c '.emu_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
+		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
+		$(MAKE) update-pak PAK_NAME="$$pak_name" PAK_TYPE="Emu"; \
+	done
+
+update-tools:
+	@jq -c '.tool_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
+		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
+		$(MAKE) update-pak PAK_NAME="$$pak_name" PAK_TYPE="Tool"; \
+	done
+
+update-pak:
+ifndef PAK_NAME
+	$(error PAK_NAME is not set)
+endif
+ifndef PAK_TYPE
+	$(error PAK_TYPE is not set)
+endif
+	@chmod +x bin/update-pak
+	@bin/update-pak "$(PAK_NAME)" "$(PAK_TYPE)"

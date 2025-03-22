@@ -1,0 +1,65 @@
+#!/bin/bash
+[ -z "$TRACE" ] || set -x
+set -eo pipefail
+
+main() {
+    declare PAK_NAME="$1" PAK_TYPE="$2"
+
+    if [[ -z "$PAK_NAME" ]]; then
+        echo "Error: PAK_NAME is not set"
+        exit 1
+    fi
+
+    if [[ -z "$PAK_TYPE" ]]; then
+        echo "Error: PAK_TYPE is not set"
+        exit 1
+    fi
+
+    if [[ "$PAK_TYPE" != "Emu" && "$PAK_TYPE" != "Tool" ]]; then
+        echo "Error: PAK_TYPE must be either 'Emu' or 'Tool'"
+        exit 1
+    fi
+
+    echo "====> Processing $PAK_TYPE pak '$PAK_NAME'"
+
+    PAK_JSON_FILE=${PAK_JSON_FILE:-"paks.json"}
+    pak_key="emus_paks"
+    if [[ "$PAK_TYPE" == "Tool" ]]; then
+        pak_key="tool_paks"
+    fi
+
+    repository=$(jq -r --arg name "$PAK_NAME" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .repository' "$PAK_JSON_FILE")
+
+    if [[ -z "$repository" ]]; then
+        echo " !    No pak found with name '$PAK_NAME' in type '$PAK_TYPE'"
+        exit 1
+    fi
+
+    # get repository owner and repo name
+    repository_owner=$(echo "$repository" | cut -d'/' -f4)
+    repository_name=$(echo "$repository" | cut -d'/' -f5)
+
+    echo "      Fetching latest release for $PAK_NAME..."
+    latest_version=$(curl -s "https://api.github.com/repos/$repository_owner/$repository_name/tags" | jq -r '.[0].name' | sed 's/^v//')
+
+    if [[ -z "$latest_version" ]]; then
+        echo " !    Could not fetch latest version from $repository"
+        exit 1
+    fi
+
+    current_version=$(jq -r --arg name "$PAK_NAME" --arg pak_key "$pak_key" '.[$pak_key][] | select(.pak_name == $name) | .version' "$PAK_JSON_FILE")
+
+    if [[ "$latest_version" == "$current_version" ]]; then
+        echo " !    $PAK_NAME is already up to date"
+        exit 0
+    fi
+
+    echo "      Updating version to $latest_version..."
+    jq --arg name "$PAK_NAME" --arg pak_key "$pak_key" --arg version "$latest_version" \
+        '.[$pak_key][] |= if .pak_name == $name then .version = $version else . end' \
+        "$PAK_JSON_FILE" >"$PAK_JSON_FILE.tmp" && mv "$PAK_JSON_FILE.tmp" "$PAK_JSON_FILE"
+
+    echo "      Successfully updated $PAK_NAME to version $latest_version"
+}
+
+main "$@"
