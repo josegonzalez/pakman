@@ -77,9 +77,9 @@
       "pak_name": "Screenshot Monitor"
     },
     {
-      "name": "SFTPGo",
-      "repository": "https://github.com/josegonzalez/minui-sftpgo-server-pak",
-      "version": "0.4.0",
+      "name": "FTP Server",
+      "repository": "https://github.com/josegonzalez/minui-ftpserver-pak",
+      "version": "0.1.0",
       "pak_name": "FTP Server"
     },
     {
