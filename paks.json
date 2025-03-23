@@ -13,6 +13,12 @@
       "version": "0.2.1",
       "pak_name": "N64",
       "rom_folder": "Roms/Nintendo 64 (N64)"
+    },
+    {
+      "name": "Pico-8",
+      "repository": "https://github.com/josegonzalez/minui-pico-8-pak",
+      "version": "0.1.0",
+      "pak_name": "PICO"
     }
   ],
   "tool_paks": [

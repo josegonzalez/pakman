@@ -29,6 +29,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 
 - [Dreamcast](https://github.com/josegonzalez/minui-dreamcast-pak) by @josegonzalez
 - [N64](https://github.com/josegonzalez/minui-n64-pak) by @josegonzalez
+- [Pico-8](https://github.com/josegonzalez/minui-pico-8-pak) by @josegonzalez
 
 <!-- end emu paks -->
 
