@@ -109,7 +109,7 @@
     {
       "name": "WiFi",
       "repository": "https://github.com/josegonzalez/minui-wifi-pak",
-      "version": "0.10.5",
+      "version": "0.11.0",
       "pak_name": "WiFi"
     }
   ]
