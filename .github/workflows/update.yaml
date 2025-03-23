@@ -116,7 +116,7 @@ jobs:
           cat <<'EOF'
           Bumps ${{ matrix.pak.pak_name }} from ${{ steps.current_version.outputs.current_version }} to ${{ steps.push-changes.outputs.new-version }}.
 
-          Changes between versions can be viewed [here](https://github.com/$repository_owner/$repository_name/compare/${{ steps.current_version.outputs.current_version }}...${{ steps.push-changes.outputs.new-version }}).
+          Changes between versions can be viewed [here](https://github.com/${{ steps.push-changes.outputs.repository-owner }}/${{ steps.push-changes.outputs.repository-name }}/compare/${{ steps.current_version.outputs.current_version }}...${{ steps.push-changes.outputs.new-version }}).
           EOF
           )
 
