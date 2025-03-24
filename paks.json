@@ -17,7 +17,7 @@
     {
       "name": "Pico-8",
       "repository": "https://github.com/josegonzalez/minui-pico-8-pak",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "pak_name": "PICO"
     }
   ],
