@@ -47,6 +47,12 @@
       "pak_name": "HTTP Server"
     },
     {
+      "name": "Favorites",
+      "repository": "https://github.com/ben16w/minui-favorites",
+      "version": "0.2.0",
+      "pak_name": "Favorites"
+    },
+    {
       "name": "FN Editor",
       "repository": "https://github.com/josegonzalez/trimui-brick-fn-editor-pak",
       "version": "0.3.4",
