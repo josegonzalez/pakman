@@ -85,7 +85,7 @@
     {
       "name": "Report",
       "repository": "https://github.com/josegonzalez/minui-report-pak",
-      "version": "0.6.2",
+      "version": "0.7.0",
       "pak_name": "Report"
     },
     {
