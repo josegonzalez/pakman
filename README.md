@@ -38,6 +38,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 
 <!-- begin tool paks -->
 
+- [Cloud Backups](https://github.com/jiserra/minui-cloud-backups) by @ben16w
 - [Collection Manager](https://github.com/jiserra/Collection-Manager.pak) by @jiserra
 - [Developer](https://github.com/josegonzalez/minui-developer-pak) by @josegonzalez
 - [Dropbear SSH Server](https://github.com/josegonzalez/minui-dropbear-server-pak) by @josegonzalez

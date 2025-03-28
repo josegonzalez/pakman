@@ -30,6 +30,12 @@
   ],
   "tool_paks": [
     {
+      "name": "Cloud Backups",
+      "repository": "https://github.com/ben16w/minui-cloud-backups",
+      "version": "1.0.0",
+      "pak_name": "Cloud Backups"
+    },
+    {
       "name": "Collection Manager",
       "repository": "https://github.com/jiserra/Collection-Manager.pak",
       "version": "0.1.1",
