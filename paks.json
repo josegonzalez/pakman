@@ -8,6 +8,13 @@
       "rom_folder": "Roms/Sega Dreamcast (DC)"
     },
     {
+      "name": "Nintendo DS",
+      "repository": "https://github.com/josegonzalez/minui-nintendo-ds-pak",
+      "version": "0.1.0",
+      "pak_name": "NDS",
+      "rom_folder": "Roms/Nintendo DS (NDS)"
+    },
+    {
       "name": "N64",
       "repository": "https://github.com/josegonzalez/minui-n64-pak",
       "version": "0.2.1",
