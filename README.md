@@ -46,6 +46,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Favorites](https://github.com/ben16w/minui-favorites) by @ben16w
 - [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez
 - [FTP Server](https://github.com/josegonzalez/minui-ftpserver-pak) by @josegonzalez
+- [Gallery](https://github.com/josegonzalez/minui-gallery-pak) by @josegonzalez
 - [Moonlight](https://github.com/josegonzalez/trimui-brick-moonlight-pak) by @josegonzalez
 - [Random Game](https://github.com/josegonzalez/minui-random-game-pak) by @josegonzalez
 - [Remote Terminal](https://github.com/josegonzalez/minui-remote-terminal-pak) by @josegonzalez
