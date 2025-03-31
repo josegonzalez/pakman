@@ -31,6 +31,12 @@
   ],
   "tool_paks": [
     {
+      "name": "Artwork Scraper",
+      "repository": "https://github.com/josegonzalez/minui-artwork-scraper-pak",
+      "version": "0.1.0",
+      "pak_name": "Artwork Scraper"
+    },
+    {
       "name": "Cloud Backups",
       "repository": "https://github.com/ben16w/minui-cloud-backups",
       "version": "1.0.1",
