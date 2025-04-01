@@ -145,10 +145,10 @@
       "pak_name": "USB Mass Storage"
     },
     {
-      "name": "WiFi",
+      "name": "Wifi",
       "repository": "https://github.com/josegonzalez/minui-wifi-pak",
       "version": "0.14.3",
-      "pak_name": "WiFi"
+      "pak_name": "Wifi"
     }
   ]
 }
