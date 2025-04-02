@@ -81,7 +81,7 @@
     {
       "name": "FTP Server",
       "repository": "https://github.com/josegonzalez/minui-ftpserver-pak",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "pak_name": "FTP Server"
     },
     {
