@@ -63,7 +63,7 @@
     {
       "name": "HTTP Server",
       "repository": "https://github.com/josegonzalez/minui-dufs-server-pak",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "pak_name": "HTTP Server"
     },
     {
