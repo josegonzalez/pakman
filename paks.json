@@ -87,7 +87,7 @@
     {
       "name": "Gallery",
       "repository": "https://github.com/josegonzalez/minui-gallery-pak",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "pak_name": "Gallery"
     },
     {
