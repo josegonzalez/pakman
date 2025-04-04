@@ -129,7 +129,7 @@
     {
       "name": "Syncthing",
       "repository": "https://github.com/josegonzalez/minui-syncthing-pak",
-      "version": "0.3.1",
+      "version": "0.3.3",
       "pak_name": "Syncthing"
     },
     {
