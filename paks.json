@@ -91,6 +91,12 @@
       "pak_name": "Gallery"
     },
     {
+      "name": "Media Player",
+      "repository": "https://github.com/josegonzalez/trimui-brick-media-player-pak",
+      "version": "0.1.2",
+      "pak_name": "Media Player"
+    },
+    {
       "name": "Moonlight",
       "repository": "https://github.com/josegonzalez/trimui-brick-moonlight-pak",
       "version": "0.3.6",
