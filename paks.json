@@ -17,7 +17,7 @@
     {
       "name": "N64",
       "repository": "https://github.com/josegonzalez/minui-n64-pak",
-      "version": "0.3.1",
+      "version": "0.4.3",
       "pak_name": "N64",
       "rom_folder": "Roms/Nintendo 64 (N64)"
     },
