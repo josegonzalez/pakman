@@ -27,6 +27,13 @@
       "version": "0.4.1",
       "pak_name": "PICO",
       "rom_folder": "Roms/Pico-8 (PICO)"
+    },
+    {
+      "name": "PSP",
+      "repository": "https://github.com/ben16w/minui-psp",
+      "version": "1.0.1",
+      "pak_name": "PSP",
+      "rom_folder": "Roms/PlayStation Portable (PSP)"
     }
   ],
   "tool_paks": [
