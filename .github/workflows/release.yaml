@@ -23,11 +23,17 @@ permissions:
 env:
   FOLDER_NAME: "Pakman"
   ZIP_NAME: "Pakman.zip"
+  ZIP_TEMPLATE_NAME: "Pakman-TEMPLATE.zip"
 
 jobs:
   build:
     name: build
     runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        release:
+          - "minui all"
+          - "nextui tg5040"
 
     steps:
       - name: Checkout
@@ -35,19 +41,52 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create package
-        run: make
+      - name: Compute release info
+        id: release-info
+        run: |
+          distribution="$({{ matrix.release }} | awk '{print $1}')"
+          allowed_platforms="$({{ matrix.release }} | awk '{print $2}')"
+          new_zip_name="$(echo ${{ env.ZIP_TEMPLATE_NAME }} | sed 's/TEMPLATE/$distribution/')"
+          echo "distribution=$distribution" >>"$GITHUB_OUTPUT"
+          echo "allowed_platforms=$allowed_platforms" >>"$GITHUB_OUTPUT"
+          echo "zip_name=$new_zip_name" >>"$GITHUB_OUTPUT"
+
+      - name: Create package for ${{ steps.release-info.outputs.distribution }} on ${{ steps.release-info.outputs.allowed_platforms }}
+        id: create-package
+        run: |
+          make DISTRIBUTION="${{ steps.release-info.outputs.distribution }}" ALLOWED_PLATFORMS="${{ steps.release-info.outputs.allowed_platforms }}" ZIP_NAME="${{ steps.release-info.outputs.zip_name }}"
 
       - name: Attest Build Provenance
         uses: actions/attest-build-provenance@v2.2.3
         with:
-          subject-path: "${{ env.ZIP_NAME }}"
+          subject-path: "${{ steps.release-info.outputs.zip_name }}"
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4.6.1
         with:
-          name: "${{ env.ZIP_NAME }}"
-          path: "${{ env.ZIP_NAME }}"
+          name: "${{ steps.release-info.outputs.zip_name }}"
+          path: "${{ steps.release-info.outputs.zip_name }}"
+
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Download MinUI Artifact
+        uses: actions/download-artifact@v4.2.1
+        with:
+          name: "Pakman-minui.zip"
+          path: "Pakman-minui.zip"
+
+      - name: Download NextUI Artifact
+        uses: actions/download-artifact@v4.2.1
+        with:
+          name: "Pakman-nextui.zip"
+          path: "Pakman-nextui.zip"
 
       - name: Get Latest Tag
         id: latest-tag
@@ -77,7 +116,9 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2.2.1
         with:
-          files: "${{ env.ZIP_NAME }}"
+          files: |
+            Pakman-minui.zip
+            Pakman-nextui.zip
           generate_release_notes: true
           make_latest: "true"
           tag_name: ${{ steps.next-tag.outputs.version }}

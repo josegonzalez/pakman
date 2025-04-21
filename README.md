@@ -8,8 +8,8 @@ An automatically generated collection of paks for your MinUI installation
 > MinUI must have already been installed and booted at least once on your device. Please follow these steps after installing MinUI.
 
 1. Mount your MinUI SD card.
-2. Download the latest release from Github. It will be named `Pakman.zip`.
-3. Unzip the `Pakman.zip` file and browse to the new `Pakman` folder.
+2. Download the latest release from the [Github releases page](https://github.com/josegonzalez/pakman/releases). It will be named either `Pakman-minui.zip` or `Pakman-nextui.zip`.
+3. Unzip the `Pakman.zip` file and browse to the newly created `Pakman` folder.
 4. From within the `Pakman` folder, copy the `Emus`, `Roms`, and `Tools` directories onto your SD Card. When prompted, _merge_ the files into place.
 5. Confirm that your SD Card now has an `Emus/tg5040/N64.pak/launch.sh` file and a `Tools/tg5040/Developer.pak/launch.sh` file. If these do not exist, the paks were not installed properly. Please file an issue if so.
 6. Delete the `Pakman` folder and `Pakman.zip` file
