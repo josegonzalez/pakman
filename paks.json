@@ -10,7 +10,7 @@
     {
       "name": "Nintendo DS",
       "repository": "https://github.com/josegonzalez/minui-nintendo-ds-pak",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "pak_name": "NDS",
       "rom_folder": "Roms/Nintendo DS (NDS)"
     },
