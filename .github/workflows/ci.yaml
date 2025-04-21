@@ -39,8 +39,8 @@ jobs:
       - name: Compute release info
         id: release-info
         run: |
-          distribution="$({{ matrix.release }} | awk '{print $1}')"
-          allowed_platforms="$({{ matrix.release }} | awk '{print $2}')"
+          distribution="$(echo ${{ matrix.release }} | awk '{print $1}')"
+          allowed_platforms="$(echo ${{ matrix.release }} | awk '{print $2}')"
           new_zip_name="$(echo ${{ env.ZIP_TEMPLATE_NAME }} | sed 's/TEMPLATE/$distribution/')"
           echo "distribution=$distribution" >>"$GITHUB_OUTPUT"
           echo "allowed_platforms=$allowed_platforms" >>"$GITHUB_OUTPUT"
