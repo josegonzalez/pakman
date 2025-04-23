@@ -46,7 +46,6 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Dropbear SSH Server](https://github.com/josegonzalez/minui-dropbear-server-pak) by @josegonzalez
 - [Dufs HTTP Server](https://github.com/josegonzalez/minui-dufs-server-pak) by @josegonzalez
 - [Favorites](https://github.com/ben16w/minui-favorites) by @ben16w
-- [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez
 - [FTP Server](https://github.com/josegonzalez/minui-ftpserver-pak) by @josegonzalez
 - [Gallery](https://github.com/josegonzalez/minui-gallery-pak) by @josegonzalez
 - [Media Player](https://github.com/josegonzalez/trimui-brick-media-player-pak) by @josegonzalez
@@ -60,6 +59,10 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Tailscale](https://github.com/ben16w/minui-tailscale) by @ben16w
 - [Terminal](https://github.com/josegonzalez/minui-terminal-pak) by @josegonzalez
 - [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
-- [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez
+
+#### MinUI Only
+
+- [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez \[**minui**\]
+- [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez \[**minui**\]
 
 <!-- end tool paks -->
