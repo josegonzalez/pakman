@@ -2,12 +2,21 @@ FOLDER_NAME ?= "Pakman"
 ZIP_NAME ?= "Pakman.zip"
 PAK_JSON_FILE ?= "paks.json"
 
+DISTRIBUTION ?= "minui"
+ALLOWED_PLATFORMS ?= "all"
+
 .PHONY: build
 build: emus tools
 	zip -r $(ZIP_NAME) $(FOLDER_NAME)
 
 emus:
 	@jq -c '.emu_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
+		distributions=$$(echo $$pak | jq -r '.distributions'); \
+		if [ "$$distributions" != "null" ]; then \
+			if ! echo "$$distributions" | grep -q "$$DISTRIBUTION"; then \
+				continue; \
+			fi \
+		fi; \
 		name=$$(echo $$pak | jq -r '.name'); \
 		repository=$$(echo $$pak | jq -r '.repository'); \
 		version=$$(echo $$pak | jq -r '.version'); \
@@ -20,6 +29,12 @@ emus:
 
 tools:
 	@jq -c '.tool_paks[]' $(PAK_JSON_FILE) | while read -r pak; do \
+		distributions=$$(echo $$pak | jq -r '.distributions'); \
+		if [ "$$distributions" != "null" ]; then \
+			if ! echo "$$distributions" | grep -q "$$DISTRIBUTION"; then \
+				continue; \
+			fi \
+		fi; \
 		name=$$(echo $$pak | jq -r '.name'); \
 		repository=$$(echo $$pak | jq -r '.repository'); \
 		version=$$(echo $$pak | jq -r '.version'); \
@@ -43,6 +58,11 @@ endif
 	mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)"
 	unzip -q -o ".tmp/$(PAK_NAME).zip" -d ".tmp/$(PAK_NAME).pak"
 	for platform in $$(jq -rM '.platforms[]' ".tmp/$(PAK_NAME).pak/config.json"); do \
+		if [ "$$ALLOWED_PLATFORMS" != "all" ]; then \
+			if ! echo "$$ALLOWED_PLATFORMS" | grep -q "$$platform"; then \
+				continue; \
+			fi \
+		fi; \
 		mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform"; \
 		rm -rf "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
 		cp -r ".tmp/$(PAK_NAME).pak" "$(FOLDER_NAME)/$(PAK_TYPE)/$$platform/$(PAK_NAME).pak"; \
