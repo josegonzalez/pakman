@@ -66,4 +66,8 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez \[**minui**\]
 - [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez \[**minui**\]
 
+#### NextUI Only
+
+- [Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) by @UncleJunVIP \[**nextui**\]
+
 <!-- end tool paks -->
