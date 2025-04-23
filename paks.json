@@ -101,6 +101,15 @@
       "pak_name": "Gallery"
     },
     {
+      "name": "Game Manager",
+      "repository": "https://github.com/UncleJunVIP/nextui-game-manager",
+      "version": "v1.0.0",
+      "pak_name": "Game Manager",
+      "distributions": [
+        "nextui"
+      ]
+    },
+    {
       "name": "Media Player",
       "repository": "https://github.com/josegonzalez/trimui-brick-media-player-pak",
       "version": "0.1.2",
