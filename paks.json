@@ -113,6 +113,12 @@
       "pak_name": "Moonlight"
     },
     {
+      "name": "Mortar",
+      "repository": "https://github.com/UncleJunVIP/Mortar.pak",
+      "version": "v1.6.0",
+      "pak_name": "Mortar"
+    },
+    {
       "name": "Random Game",
       "repository": "https://github.com/josegonzalez/minui-random-game-pak",
       "version": "0.3.4",

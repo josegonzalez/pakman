@@ -50,6 +50,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Gallery](https://github.com/josegonzalez/minui-gallery-pak) by @josegonzalez
 - [Media Player](https://github.com/josegonzalez/trimui-brick-media-player-pak) by @josegonzalez
 - [Moonlight](https://github.com/josegonzalez/trimui-brick-moonlight-pak) by @josegonzalez
+- [Mortar](https://github.com/UncleJunVIP/Mortar.pak) by @UncleJunVIP
 - [Random Game](https://github.com/josegonzalez/minui-random-game-pak) by @josegonzalez
 - [Remote Terminal](https://github.com/josegonzalez/minui-remote-terminal-pak) by @josegonzalez
 - [Report](https://github.com/josegonzalez/minui-report-pak) by @josegonzalez
