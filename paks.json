@@ -103,7 +103,7 @@
     {
       "name": "Game Manager",
       "repository": "https://github.com/UncleJunVIP/nextui-game-manager",
-      "version": "v1.1.0",
+      "version": "v1.1.0-prerelease",
       "pak_name": "Game Manager",
       "distributions": [
         "nextui"
