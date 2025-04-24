@@ -57,7 +57,9 @@ endif
 	curl -f -o ".tmp/$(PAK_NAME).zip" -sSL "$(PAK_URL)"
 	mkdir -p "$(FOLDER_NAME)/$(PAK_TYPE)"
 	unzip -q -o ".tmp/$(PAK_NAME).zip" -d ".tmp/$(PAK_NAME).pak"
-	for platform in $$(jq -rM '.platforms[]' ".tmp/$(PAK_NAME).pak/config.json"); do \
+	config_file=".tmp/$(PAK_NAME).pak/pak.json"; \
+	test -f ".tmp/$(PAK_NAME).pak/config.json" && config_file=".tmp/$(PAK_NAME).pak/config.json"; \
+	for platform in $$(jq -rM '.platforms[]' "$$config_file"); do \
 		if [ "$$ALLOWED_PLATFORMS" != "all" ]; then \
 			if ! echo "$$ALLOWED_PLATFORMS" | grep -q "$$platform"; then \
 				continue; \
