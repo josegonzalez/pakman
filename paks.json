@@ -40,7 +40,7 @@
     {
       "name": "Artwork Scraper",
       "repository": "https://github.com/josegonzalez/minui-artwork-scraper-pak",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "pak_name": "Artwork Scraper"
     },
     {
