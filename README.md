@@ -54,6 +54,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Random Game](https://github.com/josegonzalez/minui-random-game-pak) by @josegonzalez
 - [Remote Terminal](https://github.com/josegonzalez/minui-remote-terminal-pak) by @josegonzalez
 - [Report](https://github.com/josegonzalez/minui-report-pak) by @josegonzalez
+- [Search](https://github.com/laesetuc/minui-search-pak) by @laesetuc
 - [Screenshot Monitor](https://github.com/josegonzalez/minui-screenshot-monitor-pak) by @josegonzalez
 - [Simple Mode](https://github.com/josegonzalez/minui-simple-mode-pak) by @josegonzalez
 - [Syncthing](https://github.com/josegonzalez/minui-syncthing-pak) by @josegonzalez
