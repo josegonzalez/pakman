@@ -26,7 +26,10 @@ emus:
 		mkdir -p "$(FOLDER_NAME)/$$rom_folder"; \
 		touch "$(FOLDER_NAME)/$$rom_folder/.keep"; \
 		if [ "$$name" = "Portmaster" ]; then \
-			touch "$(FOLDER_NAME)/$$rom_folder/1 ) Portmaster.sh"; \
+			touch "$(FOLDER_NAME)/$$rom_folder/1) Portmaster.sh"; \
+		fi; \
+		if [ "$$name" = "Pico-8" ]; then \
+			touch "$(FOLDER_NAME)/$$rom_folder/1) Splore.p8"; \
 		fi; \
 	done
 
