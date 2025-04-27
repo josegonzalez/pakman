@@ -24,7 +24,7 @@
     {
       "name": "Pico-8",
       "repository": "https://github.com/josegonzalez/minui-pico-8-pak",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "pak_name": "PICO",
       "rom_folder": "Roms/Pico-8 (PICO)"
     },
