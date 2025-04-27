@@ -82,7 +82,7 @@
     {
       "name": "FN Editor",
       "repository": "https://github.com/josegonzalez/trimui-brick-fn-editor-pak",
-      "version": "0.3.5",
+      "version": "0.4.0",
       "pak_name": "FN Editor",
       "distributions": [
         "minui"
