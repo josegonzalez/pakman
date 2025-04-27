@@ -74,13 +74,11 @@ jobs:
         uses: actions/download-artifact@v4.2.1
         with:
           name: "Pakman-minui.zip"
-          path: "Pakman-minui.zip"
 
       - name: Download NextUI Artifact
         uses: actions/download-artifact@v4.2.1
         with:
           name: "Pakman-nextui.zip"
-          path: "Pakman-nextui.zip"
 
       - name: List files
         run: |
