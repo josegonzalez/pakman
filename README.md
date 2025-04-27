@@ -31,6 +31,7 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [NDS](https://github.com/josegonzalez/minui-nintendo-ds-pak) by @josegonzalez
 - [N64](https://github.com/josegonzalez/minui-n64-pak) by @josegonzalez
 - [Pico-8](https://github.com/josegonzalez/minui-pico-8-pak) by @josegonzalez
+- [Portmaster](https://github.com/ben16w/minui-portmaster) by @ben16w
 - [PSP](https://github.com/ben16w/minui-psp) by @ben16w
 
 <!-- end emu paks -->
