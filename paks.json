@@ -152,6 +152,12 @@
       "pak_name": "Screenshot Monitor"
     },
     {
+      "name": "Search",
+      "repository": "https://github.com/laesetuc/minui-search-pak",
+      "version": "0.2.0",
+      "pak_name": "Search"
+    },
+    {
       "name": "Simple Mode",
       "repository": "https://github.com/josegonzalez/minui-simple-mode-pak",
       "version": "0.3.0",
