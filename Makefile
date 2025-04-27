@@ -25,6 +25,9 @@ emus:
 		$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="$$repository/releases/download/$$version/$$pak_name.pak.zip" PAK_NAME="$$pak_name" || exit 1; \
 		mkdir -p "$(FOLDER_NAME)/$$rom_folder"; \
 		touch "$(FOLDER_NAME)/$$rom_folder/.keep"; \
+		if [ "$$name" = "Portmaster" ]; then \
+			touch "$(FOLDER_NAME)/$$rom_folder/1 ) Portmaster.sh"; \
+		fi; \
 	done
 
 tools:
