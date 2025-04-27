@@ -28,6 +28,9 @@ emus:
 		if [ "$$name" = "Portmaster" ]; then \
 			touch "$(FOLDER_NAME)/$$rom_folder/1 ) Portmaster.sh"; \
 		fi; \
+		if [ "$$name" = "Pico-8" ]; then \
+			touch "$(FOLDER_NAME)/$$rom_folder/1 ) Splore.p8"; \
+		fi; \
 	done
 
 tools:
