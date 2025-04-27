@@ -29,6 +29,13 @@
       "rom_folder": "Roms/Pico-8 (PICO)"
     },
     {
+      "name": "Portmaster",
+      "repository": "https://github.com/ben16w/minui-portmaster",
+      "version": "0.0.0",
+      "pak_name": "PORTS",
+      "rom_folder": "Roms/Ports (PORTS)"
+    },
+    {
       "name": "PSP",
       "repository": "https://github.com/ben16w/minui-psp",
       "version": "2.1.1",
