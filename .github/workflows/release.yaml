@@ -88,6 +88,10 @@ jobs:
           name: "Pakman-nextui.zip"
           path: "Pakman-nextui.zip"
 
+      - name: Check for downloaded files
+        run: |
+          ls -lah
+
       - name: Get Latest Tag
         id: latest-tag
         run: |
