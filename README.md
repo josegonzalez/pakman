@@ -64,12 +64,13 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 
 #### MinUI Only
 
-- [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez \[**minui**\]
+- [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez
 - [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
-- [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez \[**minui**\]
+- [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez
 
 #### NextUI Only
 
-- [Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) by @UncleJunVIP \[**nextui**\]
+- [Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) by @UncleJunVIP
+- [Theme Manager](https://github.com/Leviathanium/NextUI-Theme-Manager) by @Leviathanium
 
 <!-- end tool paks -->

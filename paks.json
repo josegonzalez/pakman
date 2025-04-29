@@ -189,6 +189,15 @@
       "pak_name": "Terminal"
     },
     {
+      "name": "Theme Manager",
+      "repository": "https://github.com/Leviathanium/NextUI-Theme-Manager",
+      "version": "v1.3-beta",
+      "pak_name": "Theme Manager",
+      "distributions": [
+        "nextui"
+      ]
+    },
+    {
       "name": "USB Mass Storage",
       "repository": "https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak",
       "version": "0.4.1",
