@@ -119,7 +119,7 @@
     {
       "name": "Media Player",
       "repository": "https://github.com/josegonzalez/trimui-brick-media-player-pak",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "pak_name": "Media Player"
     },
     {
