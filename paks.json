@@ -38,7 +38,7 @@
     {
       "name": "PSP",
       "repository": "https://github.com/ben16w/minui-psp",
-      "version": "2.1.1",
+      "version": "2.3.0",
       "pak_name": "PSP",
       "rom_folder": "Roms/PlayStation Portable (PSP)"
     }
