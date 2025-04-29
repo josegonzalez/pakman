@@ -53,7 +53,7 @@
     {
       "name": "Cloud Backups",
       "repository": "https://github.com/ben16w/minui-cloud-backups",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "pak_name": "Cloud Backups"
     },
     {
