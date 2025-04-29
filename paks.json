@@ -135,6 +135,15 @@
       "pak_name": "Mortar"
     },
     {
+      "name": "Pak Store",
+      "repository": "https://github.com/UncleJunVIP/nextui-pak-store",
+      "version": "v0.1.0",
+      "pak_name": "Pak Store",
+      "distributions": [
+        "nextui"
+      ]
+    },
+    {
       "name": "Random Game",
       "repository": "https://github.com/josegonzalez/minui-random-game-pak",
       "version": "0.4.0",
