@@ -22,7 +22,12 @@ emus:
 		version=$$(echo $$pak | jq -r '.version'); \
 		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
 		rom_folder=$$(echo $$pak | jq -r '.rom_folder'); \
-		$(MAKE) install-pak PAK_TYPE="Emus" PAK_URL="$$repository/releases/download/$$version/$$pak_name.pak.zip" PAK_NAME="$$pak_name" || exit 1; \
+		pak_zip_file=$$(echo $$pak | jq -r '.release_filename'); \
+		if [ "$$pak_zip_file" = "null" ]; then \
+			pak_zip_file=$$(echo $$pak | jq -r '.pak_name' | tr " " .); \
+			pak_zip_file="$$pak_zip_file.pak.zip"; \
+		fi; \
+		$(MAKE) install-pak PAK_NAME="$$pak_name" PAK_TYPE="Emus" PAK_URL="$$repository/releases/download/$$version/$$pak_zip_file" || exit 1; \
 		mkdir -p "$(FOLDER_NAME)/$$rom_folder"; \
 		touch "$(FOLDER_NAME)/$$rom_folder/.keep"; \
 		if [ "$$name" = "Portmaster" ]; then \
@@ -45,8 +50,12 @@ tools:
 		repository=$$(echo $$pak | jq -r '.repository'); \
 		version=$$(echo $$pak | jq -r '.version'); \
 		pak_name=$$(echo $$pak | jq -r '.pak_name'); \
-		pak_zip_file=$$(echo $$pak | jq -r '.pak_name' | tr " " .); \
-		$(MAKE) install-pak PAK_NAME="$$pak_name" PAK_TYPE="Tools" PAK_URL="$$repository/releases/download/$$version/$$pak_zip_file.pak.zip" || exit 1; \
+		pak_zip_file=$$(echo $$pak | jq -r '.release_filename'); \
+		if [ "$$pak_zip_file" = "null" ]; then \
+			pak_zip_file=$$(echo $$pak | jq -r '.pak_name' | tr " " .); \
+			pak_zip_file="$$pak_zip_file.pak.zip"; \
+		fi; \
+		$(MAKE) install-pak PAK_NAME="$$pak_name" PAK_TYPE="Tools" PAK_URL="$$repository/releases/download/$$version/$$pak_zip_file" || exit 1; \
 	done
 
 install-pak:

@@ -73,5 +73,6 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Game Manager](https://github.com/UncleJunVIP/nextui-game-manager) by @UncleJunVIP
 - [Theme Manager](https://github.com/Leviathanium/NextUI-Theme-Manager) by @Leviathanium
 - [Pak Store](https://github.com/UncleJunVIP/nextui-pak-store) by @UncleJunVIP
+- [OTA Updater](https://github.com/LanderN/nextui-updater-pak) by @LanderN
 
 <!-- end tool paks -->
