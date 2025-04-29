@@ -61,11 +61,11 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Syncthing](https://github.com/josegonzalez/minui-syncthing-pak) by @josegonzalez
 - [Tailscale](https://github.com/ben16w/minui-tailscale) by @ben16w
 - [Terminal](https://github.com/josegonzalez/minui-terminal-pak) by @josegonzalez
-- [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
 
 #### MinUI Only
 
 - [Fn Editor](https://github.com/josegonzalez/trimui-brick-fn-editor-pak) by @josegonzalez \[**minui**\]
+- [Usb Mass Storage](https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak) by @josegonzalez
 - [Wifi](https://github.com/josegonzalez/minui-wifi-pak) by @josegonzalez \[**minui**\]
 
 #### NextUI Only
