@@ -200,7 +200,7 @@
     {
       "name": "Theme Manager",
       "repository": "https://github.com/Leviathanium/NextUI-Theme-Manager",
-      "version": "v1.3-beta",
+      "version": "v1.4",
       "pak_name": "Theme Manager",
       "distributions": [
         "nextui"
