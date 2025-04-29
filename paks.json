@@ -192,7 +192,10 @@
       "name": "USB Mass Storage",
       "repository": "https://github.com/josegonzalez/trimui-brick-usb-mass-storage-pak",
       "version": "0.4.0",
-      "pak_name": "USB Mass Storage"
+      "pak_name": "USB Mass Storage",
+      "distributions": [
+        "minui"
+      ]
     },
     {
       "name": "Wifi",
