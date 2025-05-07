@@ -211,7 +211,7 @@
       "repository": "https://github.com/LanderN/nextui-updater-pak",
       "version": "0.3.7",
       "pak_name": "Updater",
-      "release_filename": "nextui-updater-pak.zip",
+      "release_filename": "Updater.pak.zip",
       "distributions": [
         "nextui"
       ]
