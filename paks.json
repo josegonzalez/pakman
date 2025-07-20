@@ -137,7 +137,7 @@
     {
       "name": "Pak Store",
       "repository": "https://github.com/UncleJunVIP/nextui-pak-store",
-      "version": "v1.0.5",
+      "version": "v1.2.1",
       "pak_name": "Pak Store",
       "distributions": [
         "nextui"
