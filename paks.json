@@ -31,7 +31,7 @@
     {
       "name": "Portmaster",
       "repository": "https://github.com/ben16w/minui-portmaster",
-      "version": "1.2.0",
+      "version": "2.1.1",
       "pak_name": "PORTS",
       "rom_folder": "Roms/Ports (PORTS)"
     },
