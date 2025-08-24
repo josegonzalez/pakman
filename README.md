@@ -2,6 +2,18 @@
 
 An automatically generated collection of paks for your MinUI installation
 
+## Supported Devices
+
+These set of paks are designed and tested on the following MinUI Platforms and devices:
+
+- `miyoomini`: Miyoo Mini Plus and the Miyoo Mini
+- `my282`: Miyoo A30
+- `my355`: Miyoo Flip
+- `rg35xxplus`: RG-35XX Plus, RG-34XX, RG-35XX H, RG-35XX SP
+- `tg5040`: Trimui Brick (formerly `tg3040`), Trimui Smart Pro
+
+Note that certain paks _may_ not be supported on specific platforms; Emu paks are generally platform specific.
+
 ## Installation
 
 > [!IMPORTANT]
