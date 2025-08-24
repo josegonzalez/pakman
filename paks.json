@@ -71,7 +71,7 @@
     {
       "name": "SSH Server",
       "repository": "https://github.com/josegonzalez/minui-dropbear-server-pak",
-      "version": "0.6.2",
+      "version": "0.8.0",
       "pak_name": "SSH Server"
     },
     {
