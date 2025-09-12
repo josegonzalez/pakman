@@ -117,6 +117,12 @@
       ]
     },
     {
+      "name": "M3U Manager",
+      "repository": "https://github.com/josegonzalez/minui-m3u-manager-pak",
+      "version": "0.1.1",
+      "pak_name": "M3U Manager"
+    },
+    {
       "name": "Media Player",
       "repository": "https://github.com/josegonzalez/trimui-brick-media-player-pak",
       "version": "0.2.1",
