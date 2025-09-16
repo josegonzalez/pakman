@@ -119,7 +119,7 @@
     {
       "name": "M3U Manager",
       "repository": "https://github.com/josegonzalez/minui-m3u-manager-pak",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "pak_name": "M3U Manager"
     },
     {
