@@ -206,7 +206,7 @@
     {
       "name": "Theme Manager",
       "repository": "https://github.com/Leviathanium/NextUI-Theme-Manager",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "pak_name": "Theme Manager",
       "distributions": [
         "nextui"
