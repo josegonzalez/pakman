@@ -126,7 +126,7 @@
       "name": "Map.txt Generator",
       "repository": "https://github.com/josegonzalez/minui-map-txt-generator-pak",
       "version": "0.1.0",
-      "pak_name": "M3U Manager"
+      "pak_name": "Map.txt Generator"
     },
     {
       "name": "Media Player",
