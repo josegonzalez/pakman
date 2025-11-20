@@ -65,7 +65,6 @@ Below are the paks sourced by this pak collection. Please refer to the licenses 
 - [Moonlight](https://github.com/josegonzalez/trimui-brick-moonlight-pak) by @josegonzalez
 - [M3U Manager](https://github.com/josegonzalez/minui-m3u-manager-pak) by @josegonzalez
 - [Map.txt Generator](https://github.com/josegonzalez/minui-map-txt-generator-pak) by @josegonzalez
-- [Mortar](https://github.com/UncleJunVIP/Mortar.pak) by @UncleJunVIP
 - [Random Game](https://github.com/josegonzalez/minui-random-game-pak) by @josegonzalez
 - [Remote Terminal](https://github.com/josegonzalez/minui-remote-terminal-pak) by @josegonzalez
 - [Report](https://github.com/josegonzalez/minui-report-pak) by @josegonzalez
