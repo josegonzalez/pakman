@@ -194,7 +194,7 @@
     {
       "name": "Tailscale",
       "repository": "https://github.com/ben16w/minui-tailscale",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "pak_name": "Tailscale"
     },
     {
