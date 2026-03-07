@@ -149,7 +149,7 @@
     {
       "name": "Remote Terminal",
       "repository": "https://github.com/josegonzalez/minui-remote-terminal-pak",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "pak_name": "Remote Terminal"
     },
     {
