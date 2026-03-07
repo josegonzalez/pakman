@@ -141,15 +141,6 @@
       "pak_name": "Moonlight"
     },
     {
-      "name": "Pak Store",
-      "repository": "https://github.com/UncleJunVIP/nextui-pak-store",
-      "version": "v4.0.1",
-      "pak_name": "Pak Store",
-      "distributions": [
-        "nextui"
-      ]
-    },
-    {
       "name": "Random Game",
       "repository": "https://github.com/josegonzalez/minui-random-game-pak",
       "version": "0.5.0",
@@ -208,16 +199,6 @@
       "repository": "https://github.com/Leviathanium/NextUI-Theme-Manager",
       "version": "1.5.1",
       "pak_name": "Theme Manager",
-      "distributions": [
-        "nextui"
-      ]
-    },
-    {
-      "name": "Updater",
-      "repository": "https://github.com/LanderN/nextui-updater-pak",
-      "version": "0.7.0",
-      "pak_name": "Updater",
-      "release_filename": "Updater.pak.zip",
       "distributions": [
         "nextui"
       ]
