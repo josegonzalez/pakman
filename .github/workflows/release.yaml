@@ -116,7 +116,7 @@ jobs:
           GIT_NEXT_TAG: ${{ steps.next-tag.outputs.version }}
 
       - name: Release
-        uses: softprops/action-gh-release@v2.2.1
+        uses: softprops/action-gh-release@v3.0.2
         with:
           files: |
             Pakman-minui.zip
