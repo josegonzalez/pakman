@@ -17,7 +17,7 @@ jobs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v7.0.0
 
       - name: Create matrix
         id: matrix
@@ -47,7 +47,7 @@ jobs:
         pak: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v7.0.0
         with:
           fetch-depth: 0
 
