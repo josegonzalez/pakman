@@ -57,7 +57,7 @@ jobs:
           make DISTRIBUTION="${{ steps.release-info.outputs.distribution }}" ALLOWED_PLATFORMS="${{ steps.release-info.outputs.allowed_platforms }}" ZIP_NAME="${{ steps.release-info.outputs.zip_name }}"
 
       - name: Attest Build Provenance
-        uses: actions/attest-build-provenance@v2.2.3
+        uses: actions/attest-build-provenance@v4.1.1
         with:
           subject-path: "${{ steps.release-info.outputs.zip_name }}"
 
