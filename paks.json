@@ -161,7 +161,7 @@
     {
       "name": "Screenshot Monitor",
       "repository": "https://github.com/josegonzalez/minui-screenshot-monitor-pak",
-      "version": "0.9.0",
+      "version": "0.10.1",
       "pak_name": "Screenshot Monitor"
     },
     {
