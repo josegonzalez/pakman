@@ -191,7 +191,7 @@
     {
       "name": "Terminal",
       "repository": "https://github.com/josegonzalez/minui-terminal-pak",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "pak_name": "Terminal"
     },
     {
