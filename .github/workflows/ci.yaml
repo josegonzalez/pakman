@@ -56,7 +56,7 @@ jobs:
           subject-path: "${{ steps.release-info.outputs.zip_name }}"
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: "${{ steps.release-info.outputs.zip_name }}"
           path: "${{ steps.release-info.outputs.zip_name }}"
