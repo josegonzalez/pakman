@@ -3,7 +3,7 @@
     {
       "name": "Dreamcast",
       "repository": "https://github.com/josegonzalez/minui-dreamcast-pak",
-      "version": "0.6.4",
+      "version": "null",
       "pak_name": "DC",
       "rom_folder": "Roms/Sega Dreamcast (DC)"
     },
